@@ -6,6 +6,7 @@ const Course = (props) => {
     <>
         <Header titulo={props.course.name}/>
         <Content partes={props.course.parts}/>
+        <hr/>
     </>
     )
 }
