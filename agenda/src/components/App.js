@@ -7,7 +7,12 @@ const App = () => {
   const [ newName, setNewName ] = useState('')
   const manejarSubmit = (e) => {
     e.preventDefault();
-    setPersons([...persons, {name: newName}])
+    let repetido = ([...persons].filter((person)=>person.name===newName)).length
+    if (repetido > 0){
+      alert(`El nombre ${newName} ya fué agregado`)
+    }else{
+      setPersons([...persons, {name: newName}])
+    }
     setNewName("")
   }
   const manejarCambio = (e) => {
